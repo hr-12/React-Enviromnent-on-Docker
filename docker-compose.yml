@@ -1,0 +1,14 @@
+version: "3"
+  
+services: 
+  reactapp:
+    stdin_open: true             #for opening (-it) flag in container  
+    tty: true                    #for opening (-it) flag in container
+    build: .
+    ports:
+      - "80:3000"
+    volumes:
+      - ./src:/app/src:ro
+      
+
+# docker-compose up -d --build              ---------- to make a new build  with compose
